@@ -29,27 +29,28 @@ fun fragmentNavigation(supportFragmentManager: FragmentManager, fragment: Fragme
 
  }
 
-
+/**
+ * Making this function more into kotlin
+ *
+ * You can assign the if statement to a variable
+ */
 fun normalizeDateString(month:Int, day:Int, year:Int):String{
 
-    var monthStr:String
-    var dayyStr:String
-
-    if(month + 1 < 10){
-        monthStr = "0" + (month + 1)
+    val monthStr:String = if(month + 1 < 10){
+        "0" + (month + 1)
     }
     else
     {
-        monthStr = "" + (month + 1)
+        "" + (month + 1)
     }
 
-    if(day < 10){
-        dayyStr = "0" + day
+    val dayyStr:String = if(day < 10){
+        "0$day"
     }
     else
     {
-        dayyStr = "" + day
+        "" + day
     }
 
-    return monthStr + "/" + dayyStr + "/"  + year
+    return "$monthStr/$dayyStr/$year"
 }

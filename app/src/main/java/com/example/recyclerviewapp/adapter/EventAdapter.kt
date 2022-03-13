@@ -31,6 +31,10 @@ class EventAdapter(
     }
 
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
+        // you can use directly here the sort by function and select how you want to sort the list
+        // here we are sorting the events by data, it will take the natural order
+        // eventList.sortBy { it.date }
+
         val event = eventList[position]
         holder.bind(event)
 
